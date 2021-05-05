@@ -21,4 +21,4 @@ steps:
     targetFolder: '$(build.artifactStagingDirectory)'
 
 - script: 
-      mvn snyk:monitor
+      ls
