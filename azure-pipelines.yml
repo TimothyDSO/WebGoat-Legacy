@@ -20,5 +20,15 @@ steps:
     contents: '**/*.war'
     targetFolder: '$(build.artifactStagingDirectory)'
 
+- task: Veracode@3
+  inputs:
+    ConnectionDetailsSelection: 'Endpoint'
+    AnalysisService: 'Veracode'
+    veracodeAppProfile: 'WebGoat'
+    version: '$(build.buildNumber)'
+    filepath: '$(build.artifactstagingdirectory)'
+    sandboxName: 'Development Sandbox'
+    maximumWaitTime: '360'
+
 - script: 
       ls
